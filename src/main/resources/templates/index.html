@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Тестовое задание INTECH</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+            <h2>Текущий msisdn: <span th:text="${msisdn}"></span></h2>
+            <form method="post">
+                <button type="submit" name="act" value="send">Сгенерировать и отправить сообщение</button>
+                <button type="submit" name="act" value="msisdn">сгенерировать новый msisdn</button>
+            </form>
+        <h3>Список сщщбщений</h3>
+        <div th:each="message : ${messages}">
+            <p>
+                <span th:text="${message.msisdn}">msisdn</span>
+                <span th:text="${message.action}">Action</span>
+                <span th:text="${message.timeStamp}">timeStamp</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
